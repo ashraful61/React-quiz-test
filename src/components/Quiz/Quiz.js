@@ -1,21 +1,21 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import "./Quiz.css";
 
 const Quiz = ({ quiz }) => {
-  const { logo, name } = quiz;
+  const { logo, name, total } = quiz;
   return (
     <div className="quiz">
       <Col>
         <Card>
-          <Card.Img variant="top" src={logo} />
+          <Card.Img className="bg-light" variant="top" src={logo} />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Text>
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+            <small> Questions: {total} </small> <br/>
+             <Button className="mt-2" variant="info">Start Test</Button>{' '}
             </Card.Text>
           </Card.Body>
         </Card>
