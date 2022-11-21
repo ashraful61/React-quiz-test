@@ -2,10 +2,11 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
 import "./Quiz.css";
 
 const Quiz = ({ quiz }) => {
-  const { logo, name, total } = quiz;
+  const { logo, name, total, id } = quiz;
   return (
     <div className="quiz">
       <Col>
@@ -15,7 +16,10 @@ const Quiz = ({ quiz }) => {
             <Card.Title>{name}</Card.Title>
             <Card.Text>
             <small> Questions: {total} </small> <br/>
-             <Button className="mt-2" variant="info">Start Test</Button>{' '}
+            <Link to={`/quiz/${id}`}>
+            <Button className="mt-2" variant="info">Start Test</Button>{' '}
+            </Link>
+          
             </Card.Text>
           </Card.Body>
         </Card>

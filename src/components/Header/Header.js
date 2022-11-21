@@ -2,24 +2,34 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { NavLink } from 'react-router-dom';
+import './Header.css';
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <div className="header">
+          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand>TechSkill Test </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
             </Nav>
-            <Nav>
-              <Nav.Link href="/">Subjects</Nav.Link>
-              <Nav.Link href="/statistics">Statistics</Nav.Link>
-              <Nav.Link href="/blog">Blog</Nav.Link>
+            <Nav className='nav-link-header'>
+              <NavLink   className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""} to='/'>
+                Subjects
+              </NavLink>
+              <NavLink className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}  to='/statistics'>    
+                Statistics
+              </NavLink >
+              <NavLink className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}  to='/blog'>
+                Blog
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+        </Navbar>
+      </div>
     );
 };
 

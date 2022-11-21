@@ -1,0 +1,16 @@
+.nav-link-header a {
+  text-decoration: none;
+  color: #ffffff;
+  margin-right: 10px;
+  padding: 10px;
+}
+.nav-link-header a:hover {
+  background-color: goldenrod;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.active {
+  background-color: goldenrod;
+  border-radius: 5px;
+}
