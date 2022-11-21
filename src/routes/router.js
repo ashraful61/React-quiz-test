@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../components/Blog/Blog";
 import Home from "../components/Home/Home";
+import NotFound from "../components/NotFound/NotFound";
 import QuizDetail from "../components/QuizDetail/QuizDetail";
 import Statistics from "../components/Statistics/Statistics";
 import Main from "../layouts/Main";
@@ -9,6 +10,7 @@ const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <NotFound></NotFound>,
       children:[
         {
             path:'/',
