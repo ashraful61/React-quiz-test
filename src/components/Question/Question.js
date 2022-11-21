@@ -8,8 +8,9 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 
 
-const Question = ({ questionProps, index }) => {
+const Question = ({ questionProps, index, setWrightAns, setWrongAns, wrightAns, wrongAns }) => {
   const { question, options, correctAnswer } = questionProps;
+
 
   const seeCorrectAnswer = () => {
     Swal.fire({
@@ -21,6 +22,7 @@ const Question = ({ questionProps, index }) => {
 
   const handleAnswer = (selectedOption) => {
      if(selectedOption === correctAnswer ) {
+      setWrightAns(wrightAns+1)
       Swal.fire({
         icon: "success",
         title: "Congratulations!",
@@ -29,6 +31,7 @@ const Question = ({ questionProps, index }) => {
       return
      }
      else {
+      setWrongAns(wrongAns+1)
       Swal.fire({
         icon: "error",
         title: "Ops!",
