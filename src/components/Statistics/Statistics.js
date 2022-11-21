@@ -16,7 +16,7 @@ const Statistics = () => {
 
   return (
     <div className="container p-5 text-center ">
-      <h1 className="py-4">Question data in graph</h1>
+      <h1 className="py-5">Total questions in graph</h1>
 
       <div className="justify-content-center d-flex">
         <BarChart
